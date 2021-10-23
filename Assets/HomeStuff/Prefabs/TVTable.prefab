@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4000011880463214}
   - component: {fileID: 33000012075995666}
   - component: {fileID: 23000012337175900}
-  - component: {fileID: 9201330396426727406}
   m_Layer: 0
   m_Name: TVTable
   m_TagString: Untagged
@@ -82,17 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9201330396426727406
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000011182921886}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 6ab336aa16c0bff44b38248b73687ce2, type: 3}

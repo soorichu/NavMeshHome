@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4000013191001076}
   - component: {fileID: 33000013760711924}
   - component: {fileID: 23000012401008982}
-  - component: {fileID: 1374057026919001474}
   m_Layer: 0
   m_Name: Trash 1
   m_TagString: Untagged
@@ -82,17 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1374057026919001474
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012081721328}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 04eb2a943a4c2714e9d66b99957bcf8d, type: 3}
