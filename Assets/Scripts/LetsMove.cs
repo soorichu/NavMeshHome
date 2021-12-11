@@ -2,30 +2,106 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
 public class LetsMove : MonoBehaviour
 {
+    public static LetsMove instance;
     NavMeshAgent agent;
-    public Transform target;
-    public Transform older;
-    bool seeked;
+//    AudioSource bell;
+    GameObject older;
+//    public Transform target;
+//    public Transform older;
+    public bool seeking;
+
     void Start()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        older = GameObject.FindWithTag("older");
         agent = GetComponent<NavMeshAgent>();
-        seeked = false;
-
+//        bell = GetComponent<AudioSource>();
+        seeking = false;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void GoToTarget(GameObject target)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !seeked)
+ //       bell.Stop();
+
+        if (!seeking)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target.transform.position);
         }
-        if(Vector3.Distance(transform.position, target.position) < 2)
+
+        if(Vector3.Distance(transform.position, target.transform.position) < 3)
         {
-            seeked = true;
-            agent.SetDestination(older.position);
+            seeking = true;
+ //           target.transform.SetParent(transform);
+ //           target.transform.localPosition = new Vector3(0, 1, 0);
+
+        }
+
+    }
+
+    public void BackToOlder(GameObject target)
+    {
+ //       bell.Stop();
+        agent.SetDestination(older.transform.position);
+        if(Vector3.Distance(transform.position, older.transform.position) <= 3)
+        {
+ //           target.transform.SetParent(null);
         }
     }
+
+    public void FindTarget(GameObject target)
+    {
+        Debug.Log("Find " + target.name);
+        GoToTarget(target);
+    }
+
+    public void TakeOlderToTarget(GameObject target) 
+    {
+        Debug.Log("Take Older to " + target.name);
+ //       bell.Stop();
+
+        if (!seeking)
+        {
+            agent.SetDestination(target.transform.position);
+        }
+
+        if (Vector3.Distance(transform.position, target.transform.position) <= 3)
+        {
+            seeking = true;
+            //           target.transform.SetParent(transform);
+            //           target.transform.localPosition = new Vector3(0, 1, 0);
+            agent.SetDestination(older.transform.position);
+        }
+    }
+
+    public void BringTargetToOlder(GameObject target)
+    {
+        Debug.Log("Bring " + target.name + " to Older");
+//        bell.Stop();
+
+
+        agent.SetDestination(target.transform.position);
+        
+
+        if (Vector3.Distance(transform.position, target.transform.position) < 3)
+        {
+            seeking = true;
+            //           target.transform.SetParent(transform);
+            //           target.transform.localPosition = new Vector3(0, 1, 0);
+            agent.SetDestination(older.transform.position);
+        }
+    }
+
+
 }

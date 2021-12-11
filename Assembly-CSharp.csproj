@@ -55,10 +55,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\TargetManager.cs" />
     <Compile Include="Assets\Scripts\LetsMove.cs" />
-    <Compile Include="Assets\Scripts\Target.cs" />
+    <Compile Include="Assets\Food Drink\Assets\Scripts\Rotator.cs" />
+    <Compile Include="Assets\Food Drink\Assets\Scripts\Consumer.cs" />
+    <Compile Include="Assets\Scripts\DictationScript.cs" />
+    <Compile Include="Assets\Scripts\ClientSocket.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Man\Document\readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Unity\Editor\2020.1.4f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
